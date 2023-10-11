@@ -1,0 +1,4 @@
+/.idea/
+/test/terraform/.terraform/
+/test/terraform/terraform.tfstate.backup
+/test/terraform/terraform.tfstate
