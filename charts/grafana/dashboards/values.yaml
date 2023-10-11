@@ -1,0 +1,3 @@
+prometheus:
+  datasource:
+    url: "http://prometheus-kube-prometheus-prometheus:9090"

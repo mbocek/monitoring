@@ -4,7 +4,7 @@ resource "helm_release" "rules" {
   depends_on = [
     kubernetes_namespace.monitoring
   ]
-  name  = "rules"
-  chart = "../../charts/rules/monitoring"
+  name      = "rules"
+  chart     = "../../charts/prometheus/rules"
   namespace = kubernetes_namespace.monitoring.id
 }

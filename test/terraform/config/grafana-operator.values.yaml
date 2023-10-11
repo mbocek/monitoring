@@ -1,9 +1,11 @@
+commonLabels:
+  dashboards: "grafana"
+
 grafana:
   ingress:
     enabled: true
     host: "grafana.local"
     ingressClassName: "nginx"
-
   config:
     security:
-      admin_password: "admin"
+      admin_password: "admin123"
