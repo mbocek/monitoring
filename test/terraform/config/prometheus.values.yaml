@@ -1,0 +1,8 @@
+prometheus:
+  ingress:
+    enabled: true
+    hostname: "prometheus.local"
+alertmanager:
+  ingress:
+    enabled: true
+    hostname: "alertmanager.local"

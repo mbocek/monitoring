@@ -2,7 +2,7 @@
 
 resource "helm_release" "grafana_operator" {
   depends_on = [
-    kubernetes_namespace.monitoring
+    kubernetes_namespace.monitoring, helm_release.ingress_nginx
   ]
   name          = "grafana-operator"
   repository    = "oci://registry-1.docker.io/bitnamicharts"

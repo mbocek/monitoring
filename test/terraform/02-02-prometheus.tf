@@ -5,7 +5,7 @@
 # Install prometheus
 resource "helm_release" "prometheus" {
   depends_on = [
-    kubernetes_namespace.monitoring
+    kubernetes_namespace.monitoring, helm_release.ingress_nginx
   ]
   name          = "prometheus"
   repository    = "oci://registry-1.docker.io/bitnamicharts"
