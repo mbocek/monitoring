@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: coredns-rules
+    role: alert-rules
+  name: coredns-rules
+spec:
+  groups:
+  - name: CoreDNS
+    rules:
+    - alert: CorednsPanicCount
+      expr: 'increase(coredns_panics_total[1m]) > 0'
+      for: 0m
+      labels:
+        severity: critical
+      annotations:
+        summary: CoreDNS Panic Count
+        description: "Number of CoreDNS panics encountered\n*pod:* {{ "{{" }} $labels.pod }}"
+        runbook: https://github.com/mbocek/monitoring/blob/main/runbooks/coredns.md#coredns-panic-count
+        dashboard:
