@@ -18,4 +18,4 @@ spec:
         summary: CoreDNS Panic Count
         description: "Number of CoreDNS panics encountered\n*pod:* {{ "{{" }} $labels.pod }}"
         runbook: https://github.com/mbocek/monitoring/blob/main/runbooks/coredns.md#coredns-panic-count
-        dashboard:
+        dashboard: {{ $.Values.grafana.url }}/d/infrastructure-coredns/coredns

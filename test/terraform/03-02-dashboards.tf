@@ -7,4 +7,5 @@ resource "helm_release" "dashboards" {
   name         = "dashboards"
   chart        = "../../charts/grafana/dashboards"
   namespace    = kubernetes_namespace.monitoring.id
+  force_update = true
 }

@@ -1,0 +1,13 @@
+---
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDashboard
+metadata:
+  name: grafanadashboard-infra-coredns
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: grafana
+  folder: kubernetes
+  json: |
+# keep spacing
+{{ .Files.Get "dashboards/coredns.json" | indent 4 }}

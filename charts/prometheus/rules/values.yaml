@@ -1,1 +1,2 @@
-
+grafana:
+  url: "http://grafana.local"
